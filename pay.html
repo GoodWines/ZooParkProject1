@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Оплата квитка 😎</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background: #f0f2f5;
+        margin: 0;
+        padding: 0;
+      }
+
+      .payment-box {
+        max-width: 400px;
+        margin: 80px auto;
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        border: 5px solid #254edb;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: 26px;
+        margin: 15px 0;
+        color: #4caf50;
+      }
+
+      button {
+        width: 100%;
+        padding: 14px;
+        font-size: 18px;
+        background: #3366f3;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #254edb;
+      }
+
+      .back {
+        display: block;
+        margin-top: 15px;
+        text-decoration: none;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="payment-box">
+      <h1 id="ticketName">Квиток</h1>
+      <div class="price" id="ticketPrice">0 грн</div>
+
+      <button onclick="pay()">Оплатити</button>
+
+      <a href="tickets.html" class="back">← Повернутися назад</a>
+    </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const ticket = params.get("ticket");
+
+      const tickets = {
+        adult: { name: "🐾 Дорослий квиток", price: "150 грн" },
+        child: { name: "🐶 Дитячий квиток", price: "80 грн" },
+        family: { name: "🐘 Сімейний квиток", price: "350 грн" },
+        feeding: { name: "🦒 Годування тварин", price: "50 грн" },
+      };
+
+      if (tickets[ticket]) {
+        document.getElementById("ticketName").textContent =
+          tickets[ticket].name;
+        document.getElementById("ticketPrice").textContent =
+          tickets[ticket].price;
+      }
+
+      function pay() {
+        alert("😎 Тут буде реальна оплата (LiqPay / Stripe)");
+      }
+    </script>
+  </body>
+</html>

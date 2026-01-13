@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+  background-color: #d48686;
+  /* background-image: url("https://images.wallpaperscraft.ru/image/single/enot_listia_maskirovka_119370_1280x720.jpg"); */
+  background-repeat: no-repeat;
+}
+
+selector {
+  background-image: url("https://images.wallpaperscraft.ru/image/single/enot_listia_maskirovka_119370_1280x720.jpg");
+  background-size: cover; /* масштабування зображення по всій площі */
+  background-position: center; /* центр зображення */
+  background-repeat: no-repeat; /* без повторів */
+}
+
+.zoo-title {
+  width: 450px;
+  margin: 10px auto;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 36px;
+  text-shadow: 4px 4px 7px rgb(160, 72, 32);
+  text-transform: uppercase;
+  background-color: #45a049; /* фон */
+  border-radius: 100px; /* закруглені кути */
+  border: 2px dashed #000000; /* рамка */
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.button-block {
+  text-align: center; /* вирівнюємо всі кнопки по центру */
+  margin: 10px 0; /* відступ зверху і знизу */
+}
+
+.btn {
+  background-color: #202b8a; /* зелений фон */
+  color: white; /* білий текст */
+  border: 6px dotted #ffffff; /* без рамки */
+  border-radius: 25px; /* закруглені кути */
+  padding: 12px 25px; /* внутрішні відступи */
+  margin: 5px; /* відстань між кнопками */
+  font-size: 15px; /* розмір тексту */
+  cursor: pointer; /* курсор у вигляді руки */
+  transition: all 0.3s ease; /* плавна анімація */
+}
+
+.btn:hover {
+  background-color: #d62222; /* трохи темніший при наведенні */
+  transform: scale(1.05); /* збільшення кнопки */
+}
+
+/* Стиль тільки для кнопки слайдшоу */
+#toggleBtn {
+  position: fixed;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  bottom: 20px;
+  right: 20px;
+  width: 100px; /* ширина */
+  height: 100px; /* висота = ширина */
+  border-radius: 50%; /* робимо круглу форму */
+  padding: 0; /* прибираємо внутрішні відступи */
+  font-size: 15px;
+  border-radius: 50px;
+  border: 10px solid white;
+  cursor: pointer;
+  background-color: #32813f;
+  color: rgb(32, 1, 1);
+  z-index: 1000; /* поверх усіх елементів */
+  transition: background-color 0.3s ease;
+}
+
+#toggleBtn:hover {
+  background-color: #ff0101;
+}
+
+.textclass {
+  font-family: "Roboto", sans-serif;
+  font-size: 35px;
+  color: #000000;
+  text-align: center;
+  margin: 10px;
+  text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255),
+    -1px 1px 0 rgb(255, 255, 255), 3px 1px 0 rgb(255, 255, 255);
+}
+
+.textanimalsphoto {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #000000;
+}
+
+.text0class {
+  font-family: "Nunito", sans-serif;
+  font-size: 25px;
+  margin: 10px;
+  color: #000000;
+}
+
+.text1class {
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
+  margin: 10px;
+  color: #000000;
+}
+
+a {
+  color: rgb(231, 235, 13);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: rgb(3, 250, 229); /* змінюється колір при наведенні */
+}
+
+.grid-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.grid-collage img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.prices {
+  list-style: none;
+  padding: 0;
+  max-width: 520px;
+  margin: 20px auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.prices li {
+  margin-bottom: 15px;
+}
+
+/* сама кнопка */
+.prices li a {
+  position: relative;
+  display: block;
+  padding: 14px 18px 14px 52px;
+  background: #f5f5f5;
+  border-left: 8px solid #4caf50;
+  border-radius: 8px;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* іконки */
+.prices li a::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+}
+
+.adult a::before {
+  content: "🐾";
+}
+.child a::before {
+  content: "🐶";
+}
+.family a::before {
+  content: "🐘";
+}
+.feeding a::before {
+  content: "🦒";
+}
+
+/* hover 😎 */
+.prices li a:hover {
+  background: #3366f3;
+  color: #fff;
+  transform: translateX(6px);
+}
+
+.grid-main-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-main-collage img {
+  width: 100%;
+  height: 320px; /* робить фото великими */
+  object-fit: cover; /* НЕ тягне зображення */
+  border-radius: 16px; /* красиво 😎 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.grid-main-collage img:hover {
+  transform: scale(1.05); /* збільшуємо при наведенні */
+  box-shadow: 0 8px 16px rgb(255, 238, 0); /* додаємо тінь */
+}
+
+.nice-btn {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: white;
+  font-size: 20px;
+  padding: 14px 30px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.nice-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.nice-btn:active {
+  transform: scale(0.95);
+}
